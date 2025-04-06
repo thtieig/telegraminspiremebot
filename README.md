@@ -181,15 +181,9 @@ inspiring_bot/
 
 ---
 Enjoy your daily dose of inspiration!
-```
 
-**How to Use:**
 
-1.  Navigate to your project directory on the server: `cd ~/inspiring_bot`
-2.  Create the file: `nano README.md`
-3.  Paste the entire content above into the `nano` editor.
-4.  Save and exit: `Ctrl+O`, Enter, `Ctrl+X`.
-5.  Add the new file to Git: `git add README.md`
-6.  Commit the change: `git commit -m "Add README.md"`
-7.  Push to Bitbucket: `git push origin main` (or `master`, depending on your branch name).
+## License
+-------
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
