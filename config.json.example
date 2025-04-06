@@ -1,0 +1,8 @@
+{
+  "whitelisted_chat_ids": [
+    YOUR_CHAT_ID_HERE  # Replace with your actual Telegram Chat ID(s)
+  ],
+    "openai_base_url": "https://openai.inference.de-txl.ionos.com/v1",
+    "openai_model": "meta-llama/Llama-3.3-70B-Instruct",
+    "openai_prompt": "Generate a concise and motivational sentence in British English centred on self love and positive energy. The message should be unique and encourage a mindset of gratitude and self care, without any standard greetings."
+}
