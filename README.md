@@ -158,8 +158,15 @@ To send the message automatically every morning:
     *   `0 8 * * *`: Minute 0, Hour 8 (8 AM), Every Day, Every Month, Every Day of the week. Change `8` to your desired hour (0-23).
     *   `/home/your_user/.../python`: **Use your absolute path to python.**
     *   `/home/your_user/.../send_message.py`: **Use your absolute path to the script.**
-    *   `>> /home/.../cron.log 2>&1`: Appends all output (standard and error) to `cron.log` in your project directory for debugging.
-
+    *   `>> /home/.../cron.log 2>&1`: Appends all output (standard and error) to `cron.log` in your project directory for debugging. I would recommend to replace `>>` with `>` to overwrite the log every day, avoiding this log to grow unlimitedly.
+    
+    Another way could be having the _daily run_ log in `cron.log` and the whole runs history logged to `syslog` or `journalctl`. Here a `cron` example:
+    ```crontab
+    # Send daily inspiring message at 8:00 AM
+    0 8 * * * /home/your_user/telegraminspiremebot/inspiringbot/bin/python /home/your_user/telegraminspiremebot/send_message.py 2>&1 | tee /home/your_user/telegraminspiremebot/cron.log | logger -t inspirebot
+    ```    
+    For this approach, make sure to have `logger` installed. You should be able to see the logs of all the runs in `/var/log/syslog` or using `journalctl -t inspirebot`.  
+    
 4.  **Save and Exit:** (`Ctrl+O`, Enter, `Ctrl+X` for nano). The cron job is now active.
 
 5.  **Automatic Restart:** The `cron` service on Debian 12 typically starts automatically on system boot, so your scheduled job should persist after reboots. You can check its status with `systemctl status cron`.
