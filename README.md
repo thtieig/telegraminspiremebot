@@ -35,7 +35,6 @@ Follow these steps on your Linux server:
     git clone https://thtieig@bitbucket.org/thtieig/telegraminspiremebot.git
     cd telegraminspiremebot
     ```
-    *(Replace `<your-bitbucket-repo-url.git>` with the actual URL of your repository)*
 
 2.  **Create Python Virtual Environment:**
     ```bash
@@ -79,7 +78,7 @@ You need to configure secrets and settings before running the script.
 
 **3. Create `.env` File (Secrets):**
 
-*   Create a file named `.env` in the `inspiring_bot` directory:
+*   Create a file named `.env` in the `telegraminspiremebot` repository's directory:
     ```bash
     nano .env
     ```
@@ -126,7 +125,7 @@ You need to configure secrets and settings before running the script.
 
 1.  Ensure your virtual environment is active:
     ```bash
-    cd ~/inspiring_bot  # Or your project directory
+    cd ~/telegraminspiremebot  # Or your project directory
     source inspiringbot/bin/activate
     ```
 2.  Run the script directly:
@@ -142,8 +141,8 @@ You need to configure secrets and settings before running the script.
 To send the message automatically every morning:
 
 1.  **Find Absolute Paths:** You need the full paths to your Python interpreter (within the venv) and your script.
-    *   Find Python path (while venv is active): `which python` (e.g., `/home/your_user/inspiring_bot/inspiringbot/bin/python`)
-    *   Find script path: `pwd` (while in `~/inspiring_bot`) will give you the directory (e.g., `/home/your_user/inspiring_bot`). The script path is then `/home/your_user/inspiring_bot/send_message.py`.
+    *   Find Python path (while venv is active): `which python` (e.g., `/home/your_user/telegraminspiremebot/inspiringbot/bin/python`)
+    *   Find script path: `pwd` (while in `~/telegraminspiremebot`) will give you the directory (e.g., `/home/your_user/telegraminspiremebot`). The script path is then `/home/your_user/telegraminspiremebot/send_message.py`.
 
 2.  **Edit Crontab:**
     ```bash
@@ -154,7 +153,7 @@ To send the message automatically every morning:
 3.  **Add Cron Job:** Add a line like the following at the bottom, **replacing the placeholder paths** with the absolute paths you found above. This example runs at 8:00 AM daily:
     ```crontab
     # Send daily inspiring message at 8:00 AM
-    0 8 * * * /home/your_user/inspiring_bot/inspiringbot/bin/python /home/your_user/inspiring_bot/send_message.py >> /home/your_user/inspiring_bot/cron.log 2>&1
+    0 8 * * * /home/your_user/telegraminspiremebot/inspiringbot/bin/python /home/your_user/telegraminspiremebot/send_message.py >> /home/your_user/telegraminspiremebot/cron.log 2>&1
     ```
     *   `0 8 * * *`: Minute 0, Hour 8 (8 AM), Every Day, Every Month, Every Day of the week. Change `8` to your desired hour (0-23).
     *   `/home/your_user/.../python`: **Use your absolute path to python.**
@@ -168,7 +167,7 @@ To send the message automatically every morning:
 ## File Structure
 
 ```
-inspiring_bot/
+telegraminspiremebot/
 ├── inspiringbot/      (Python virtual env - ignored by git)
 ├── .env              (Secrets - **ignored by git**)
 ├── .gitignore        (Specifies files for git to ignore)
