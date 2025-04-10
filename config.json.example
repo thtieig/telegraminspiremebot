@@ -4,5 +4,5 @@
   ],
     "openai_base_url": "https://openai.inference.de-txl.ionos.com/v1",
     "openai_model": "meta-llama/Llama-3.3-70B-Instruct",
-    "openai_prompt": "Generate a concise and motivational sentence in British English centred on self love and positive energy. The message should be unique and encourage a mindset of gratitude and self care, without any standard greetings."
+    "openai_prompt": "Generate a concise affirmation/self-affirmation/self-love/motivational quote/uplifting message in British English. The message should be unique. Without any standard greetings. Emoticons are allowed."
 }
